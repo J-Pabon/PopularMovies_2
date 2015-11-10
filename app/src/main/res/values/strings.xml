@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="action_sort_popularity">Sort by popularity</string>
+    <string name="action_sort_vote_average">Sort by rate</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="title_activity_movie_detail">Movie details</string>
+    <string name="contdesc_backdrop_path">backdrop path</string>
+    <string name="contdesc_thumbnail_poster">movie poster image</string>
+    <string name="title_release_date">Release date</string>
+    <string name="title_user_rating">User rating</string>
+    <string name="contdesc_star">star</string>
+    <string name="contdesc_movie_poster">movie poster</string>
+    <string name="error_network_unavailable">Network unavailable</string>
+    <string name="error_fetch_data">Error trying to fetch data</string>
+    <string name="error_retry">Retry</string>
+    <string name="title_trailers">Trailers</string>
+    <string name="title_reviews">Reviews</string>
+    <string name="no_trailers">Sorry, there are no trailers for this movie.</string>
+    <string name="no_reviews">Sorry, there are no reviews for this movie.</string>
+    <string name="separator">::</string>
+    <string name="button_add_favorite">Add to favorites</string>
+    <string name="button_favorite">favorite</string>
+
+    <string name="title_movies_detail">Movies Detail</string>
+    <string name="title_activity_popular_movies">PopularMoviesActivity</string>
+    <string name="title_activity_details">DetailsActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
