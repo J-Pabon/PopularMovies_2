@@ -1,6 +1,7 @@
 package popularmovies.portfolio.jpabon.com.popularmoviesv3.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,18 +51,32 @@ public class ReviewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.layout_review, parent, false);
 
-        TextView tvAuthor = (TextView) layout.findViewById(R.id.tvAuthor);
-        tvAuthor.setText("By: " + getData().get(position).getAuthor());
+        ViewHolderer holder;
 
-        TextView tvUrl = (TextView) layout.findViewById(R.id.tvUrl);
-        tvUrl.setText("(" + getData().get(position).getUrl() + ")");
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.layout_review, parent, false);
+            holder = new ViewHolderer();
 
-        TextView tvContent = (TextView) layout.findViewById(R.id.tvContent);
-        tvContent.setText(getData().get(position).getContent());
+            holder.tvAuthor = (TextView) convertView.findViewById(R.id.tvAuthor);
+            holder.tvUrl = (TextView) convertView.findViewById(R.id.tvUrl);
+            holder.tvContent = (TextView) convertView.findViewById(R.id.tvContent);
 
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolderer) convertView.getTag();
+        }
 
-        return layout;
+        holder.tvAuthor.setText("By: " + getData().get(position).getAuthor());
+        holder.tvUrl.setText("(" + getData().get(position).getUrl() + ")");
+        holder.tvContent.setText(getData().get(position).getContent());
+
+        return convertView;
+    }
+
+    class ViewHolderer {
+        TextView tvAuthor;
+        TextView tvUrl;
+        TextView tvContent;
     }
 }
